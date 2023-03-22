@@ -1,0 +1,20 @@
+//Get banners
+export const GET_BANNERS_SUCCESS = "GET_BANNERS_SUCCESS";
+export const GET_BANNERS_FAILED = "GET_BANNERS_FAILED";
+
+//Get sliders
+export const GET_SLIDER_SUCCESS = "GET_SLIDER_SUCCESS";
+export const GET_SLIDER_FAILED = "GET_SLIDER_FAILED";
+
+//Get sections
+export const GET_SECTIONS_SUCCESS = "GET_SECTIONS_SUCCESS";
+export const GET_SECTIONS_FAILED = "GET_SECTIONS_FAILED";
+
+//Get brands
+export const GET_BRANDS_SUCCESS = "GET_BRANDS_SUCCESS";
+export const GET_BRANDS_FAILED = "GET_BRANDS_FAILED";
+
+
+//Get banners
+export const GET_GALLERY_SUCCESS = "GET_GALLERY_SUCCESS";
+export const GET_GALLERY_FAILED = "GET_GALLERY_FAILED";
