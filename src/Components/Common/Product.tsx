@@ -40,11 +40,6 @@ const Product = ({ products }: Props) => {
                                                 ৳{product.totalPrice}
                                             </Typography>
                                         </Box>
-                                        <Box sx={styles.OffCard}>
-                                            <Typography variant="body1" component="h6">
-                                                OFF <span>{product.discount}{product.discountUnit === "percent" ? "%" : "৳"}</span>
-                                            </Typography>
-                                        </Box>
                                     </a>
                                 </Link>
                             </Box>
