@@ -21,7 +21,7 @@ const Sections = () => {
     return (
         <Box sx={{ my: "1.5em" }}>
             {sections.map((item, i) => (
-                <Box>
+                <Box key={i}>
                     <Box>
                         <Stack direction="row">
                             <Box sx={{ flex: 1 }}>

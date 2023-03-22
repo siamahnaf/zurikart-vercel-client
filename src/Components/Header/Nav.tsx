@@ -66,7 +66,7 @@ const Nav = () => {
             {hover !== null && categories[hover as number].subCategory.length > 0 &&
                 <Box sx={styles.Megamenu}>
                     {categories[hover as number].subCategory.map((item, i) => (
-                        <Link href={`/category/${categories[hover as number].slug}?subcategory=${item.slug}`}>
+                        <Link href={`/category/${categories[hover as number].slug}?subcategory=${item.slug}`} key={i}>
                             <a>{item.name}</a>
                         </Link>
                     ))}
