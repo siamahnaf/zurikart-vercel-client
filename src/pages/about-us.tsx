@@ -15,10 +15,7 @@ import styles from "Styles/About/AboutUs.styles";
 
 //Redux
 import { wrapper } from "Redux/Store";
-import { getCategory, getFlashSale, getSitesSettings } from "Redux/Action/Common/common.action";
-import { getCart } from "Redux/Action/Cart/cart.action";
-import { getWishlist } from "Redux/Action/Wishlist/wishlist.action";
-import { getProfile } from "Redux/Action/Profile/profile.action";
+import { getCategory, getSitesSettings } from "Redux/Action/Common/common.action";
 
 const Aboutus: NextPage = () => {
     return (
@@ -51,13 +48,7 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
     (store) =>
         async (context) => {
             await store.dispatch(getCategory());
-            await store.dispatch(getFlashSale());
             await store.dispatch(getSitesSettings());
-            if (context.req.cookies['secretId']) {
-                await store.dispatch(getCart(context.req.cookies['secretId'] as string));
-                await store.dispatch(getWishlist(context.req.cookies['secretId'] as string));
-                await store.dispatch(getProfile(context.req.cookies['secretId'] as string));
-            }
             return { props: {} };
         }
 )
