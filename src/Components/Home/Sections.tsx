@@ -23,42 +23,49 @@ const Sections = () => {
         <Box sx={{ my: "1.5em" }}>
             {sections.map((item, i) => (
                 <Box key={i}>
-                    <Box>
-                        <Stack direction="row" sx={{ bgcolor: item?.color || "white", py: "3px", px: "4px" }}>
-                            <Box sx={{ flex: 1 }}>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
-                                    {item?.category1?.name}
-                                </Typography>
-                            </Box>
-                            <Box sx={{ a: { textDecoration: "none", textTransform: "uppercase", color: "black", display: "flex", alignItems: "center", fontSize: "18px", svg: { fontSize: "28px" } } }}>
-                                <Link href={`/category/${item?.category1?.slug}`}>
-                                    <a>
-                                        <span>See All</span>
-                                        <Icon icon="ic:round-keyboard-arrow-right" />
-                                    </a>
-                                </Link>
-                            </Box>
-                        </Stack>
-                        <ProductCarousel products={item.category1Product} />
-                    </Box>
-                    <Box>
-                        <Stack direction="row">
-                            <Box sx={{ flex: 1 }}>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
-                                    {item?.category1?.name}
-                                </Typography>
-                            </Box>
-                            <Box sx={{ a: { textDecoration: "none", textTransform: "uppercase", color: "black", display: "flex", alignItems: "center", fontSize: "18px", svg: { fontSize: "28px" } } }}>
-                                <Link href={`/category/${item?.category1?.slug}`}>
-                                    <a>
-                                        <span>See All</span>
-                                        <Icon icon="ic:round-keyboard-arrow-right" />
-                                    </a>
-                                </Link>
-                            </Box>
-                        </Stack>
-                        <ProductCarousel products={item.category1Product} />
-                    </Box>
+                    {item.category1Product.length > 0 &&
+                        <Box>
+                            <Typography sx={{ bgcolor: item?.color || "white", py: "3px", px: "10px", mb: "10px", fontWeight: 700, fontSize: "18px" }}>
+                                {item.name}
+                            </Typography>
+                            <Stack direction="row">
+                                <Box sx={{ flex: 1 }}>
+                                    <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
+                                        {item?.category1?.name}
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ a: { textDecoration: "none", textTransform: "uppercase", color: "black", display: "flex", alignItems: "center", fontSize: "18px", svg: { fontSize: "28px" } } }}>
+                                    <Link href={`/category/${item?.category1?.slug}`}>
+                                        <a>
+                                            <span>See All</span>
+                                            <Icon icon="ic:round-keyboard-arrow-right" />
+                                        </a>
+                                    </Link>
+                                </Box>
+                            </Stack>
+                            <ProductCarousel products={item.category1Product} />
+                        </Box>
+                    }
+                    {item.category2Product.length > 0 &&
+                        <Box>
+                            <Stack direction="row">
+                                <Box sx={{ flex: 1 }}>
+                                    <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
+                                        {item?.category2?.name}
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ a: { textDecoration: "none", textTransform: "uppercase", color: "black", display: "flex", alignItems: "center", fontSize: "18px", svg: { fontSize: "28px" } } }}>
+                                    <Link href={`/category/${item?.category2?.slug}`}>
+                                        <a>
+                                            <span>See All</span>
+                                            <Icon icon="ic:round-keyboard-arrow-right" />
+                                        </a>
+                                    </Link>
+                                </Box>
+                            </Stack>
+                            <ProductCarousel products={item.category2Product} />
+                        </Box>
+                    }
                     <Box sx={{ mb: "2em" }}>
                         {item?.dynamicBanner.length > 0 &&
                             <Banners

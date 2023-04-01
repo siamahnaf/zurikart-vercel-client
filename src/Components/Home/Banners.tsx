@@ -26,7 +26,7 @@ const Banners = ({ dynamicBanner }: Props) => {
                                         <Link href={item.link}>
                                             <a>
                                                 <AspectRatio ratio="4/3" style={{ width: "100%" }} >
-                                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} alt="banner" key={i} layout={'fill'} style={{ borderRadius: "0 35px 0 35px" }} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} />
+                                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} alt="banner" key={i} layout={'fill'} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} />
                                                 </AspectRatio>
                                             </a>
                                         </Link>
