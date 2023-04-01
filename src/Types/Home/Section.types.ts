@@ -23,6 +23,7 @@ export interface Products {
 }
 export interface Sections {
     name: string;
+    color: string;
     description: string;
     category1: {
         name: string;

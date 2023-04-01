@@ -27,13 +27,13 @@ const ProductSide = () => {
                     Delivery & Return
                 </Typography>
                 <Box sx={{ width: "80px", mt: "12px" }}>
-                    <Image src={Exce} alt="Hard" />
+                    <Image src={Exce} alt="Hard" placeholder="blur" />
                 </Box>
             </Box>
             <Box sx={{ border: "1px solid rgba(0, 0, 0, 0.3)", p: "8px 10px", borderRadius: "5px", mt: "20px" }}>
                 <Stack direction="row" gap={2} sx={{ mb: "10px" }}>
                     <Box sx={{ flexBasis: "18%" }}>
-                        <Image src={DoorImage} alt="Door Image" />
+                        <Image src={DoorImage} alt="Door Image" placeholder="blur" />
                     </Box>
                     <Box sx={{ flex: 1 }}>
                         <Typography variant="h5" component="h5" sx={{ fontSize: "17px", fontWeight: 600 }}>Door Delivery</Typography>
@@ -47,7 +47,7 @@ const ProductSide = () => {
                 </Stack>
                 <Stack direction="row" gap={2} sx={{ mb: "10px" }}>
                     <Box sx={{ flexBasis: "18%" }}>
-                        <Image src={PickupImage} alt="Door Image" />
+                        <Image src={PickupImage} alt="Door Image" placeholder="blur" />
                     </Box>
                     <Box sx={{ flex: 1 }}>
                         <Typography variant="h5" component="h5" sx={{ fontSize: "17px", fontWeight: 600 }}>Pickup Station</Typography>
@@ -61,7 +61,7 @@ const ProductSide = () => {
                 </Stack>
                 <Stack direction="row" gap={2}>
                     <Box sx={{ flexBasis: "18%" }}>
-                        <Image src={Policy} alt="Door Image" />
+                        <Image src={Policy} alt="Door Image" placeholder="blur" />
                     </Box>
                     <Box sx={{ flex: 1 }}>
                         <Typography variant="h5" component="h5" sx={{ fontSize: "17px", fontWeight: 600 }}>Return Policy</Typography>

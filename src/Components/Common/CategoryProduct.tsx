@@ -32,8 +32,8 @@ const CategoryProduct = ({ products }: Props) => {
                                 <Link href={`/product/${product.slug}`}>
                                     <a aria-label="carousel">
                                         {product.productImages.length > 0 ?
-                                            (<Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} alt={product.name} height={500} width={500} />) : (
-                                                <Image src={Default} alt={product.name} height={500} width={500} />
+                                            (<Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} alt={product.name} height={500} width={500} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} />) : (
+                                                <Image src={Default} alt={product.name} height={500} width={500} placeholder="blur" blurDataURL={product.name} />
                                             )}
                                         <Typography variant="body1" component="p">
                                             {product.name}
@@ -45,7 +45,7 @@ const CategoryProduct = ({ products }: Props) => {
                                         </Box>
                                         <Stack direction="row" alignItems="center" sx={{ mt: "10px" }}>
                                             <Box sx={{ flexBasis: "40%", mt: "5px" }}>
-                                                <Image src={Exce} alt="sdfsgd" />
+                                                <Image src={Exce} alt="sdfsgd" placeholder="blur" />
                                             </Box>
                                             <Box sx={{ flex: 1, textAlign: "right" }}>
                                                 <Box sx={{ bgcolor: "primary.main", borderRadius: "3px", p: "2px 10px", display: "flex", width: "max-content", ml: "auto", color: "white", gap: "5px", alignItems: "center" }}>
@@ -67,7 +67,7 @@ const CategoryProduct = ({ products }: Props) => {
             {
                 products.length === 0 &&
                 <Box sx={{ textAlign: "center", mt: "35px" }}>
-                    <Image src={Nothings} alt="Nothing found" width={400} height={400} />
+                    <Image src={Nothings} alt="Nothing found" width={400} height={400} placeholder="blur" />
                 </Box>
             }
         </Box >

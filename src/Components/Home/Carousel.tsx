@@ -62,6 +62,8 @@ const Carousel = () => {
                                                     src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
                                                     alt={carousel.name}
                                                     layout={'fill'}
+                                                    placeholder="blur"
+                                                    blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
                                                 />
                                             </Box>
                                         </a>

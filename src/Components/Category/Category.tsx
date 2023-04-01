@@ -46,7 +46,7 @@ const Category = () => {
                                     <a>
                                         <Stack direction="row">
                                             {category?.image &&
-                                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + category.image} width={25} height={25} alt={category.name} />
+                                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + category.image} width={25} height={25} alt={category.name} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + category.image} />
                                             }
                                             <Typography variant="body2" component="p">
                                                 {category.name}

@@ -119,7 +119,10 @@ const ProductCarousel = ({ products }: Props) => {
                         <Box className={`keen-slider__slide number-slide${0 + 1}`} key={i} sx={styles.Card}>
                             <Link href={`/product/${product.slug}`}>
                                 <a>
-                                    <Image src={product.productImages[0]?.url ? process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url : Default} alt={product.name} height={500} width={500} />
+                                    {product.productImages.length > 0 ?
+                                        (<Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} alt={product.name} height={500} width={500} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} />) : (
+                                            <Image src={Default} alt={product.name} height={500} width={500} placeholder="blur" blurDataURL={product.name} />
+                                        )}
                                     <Typography variant="body1" component="p">
                                         {product.name}
                                     </Typography>

@@ -24,7 +24,7 @@ const Sections = () => {
             {sections.map((item, i) => (
                 <Box key={i}>
                     <Box>
-                        <Stack direction="row">
+                        <Stack direction="row" sx={{ bgcolor: item?.color || "white", py: "3px", px: "4px" }}>
                             <Box sx={{ flex: 1 }}>
                                 <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
                                     {item?.category1?.name}
@@ -67,7 +67,7 @@ const Sections = () => {
                         }
                         {item?.banner &&
                             <Link href={item?.bannerUrl}>
-                                <a><Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} /></a>
+                                <a><Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} /></a>
                             </Link>
                         }
                     </Box>

@@ -26,7 +26,7 @@ const Gallery = () => {
                     <Grid item {...{ md: 6 }} key={i}>
                         <Link href={item.url}>
                             <a>
-                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={400} height={420} />
+                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={400} height={420} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
                             </a>
                         </Link>
                     </Grid>

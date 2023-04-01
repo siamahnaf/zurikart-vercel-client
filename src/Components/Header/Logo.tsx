@@ -19,7 +19,7 @@ const Logo = () => {
             <Link href="/">
                 <a aria-label="logo">
                     {sites?.logo ? (
-                        <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + sites?.logo} alt="Logo" width={130} height={43} />
+                        <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + sites?.logo} alt="Logo" width={130} height={43} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + sites?.logo} />
                     ) : (
                         <Typography variant="h6" component="h6">
                             {sites?.siteTitle}

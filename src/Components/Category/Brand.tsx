@@ -42,7 +42,7 @@ const Brand = () => {
                                     <a>
                                         <Stack direction="row">
                                             {brand?.image &&
-                                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + brand.image} width={25} height={25} alt={brand.name} />
+                                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + brand.image} width={25} height={25} alt={brand.name} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + brand.image} />
                                             }
                                             <Typography variant="body2" component="p">
                                                 {brand.name}

@@ -36,6 +36,8 @@ const Advertise = () => {
                                                     src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
                                                     alt={carousel.name}
                                                     layout={'fill'}
+                                                    placeholder="blur"
+                                                    blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
                                                 />
                                             </Box>
                                         </a>

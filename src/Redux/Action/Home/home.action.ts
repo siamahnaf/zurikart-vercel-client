@@ -105,6 +105,7 @@ export const getSections = () => async (dispatch: Dispatch) => {
             `query getSection {
                 getSections {
                   name
+                  color
                   description
                   category1 {
                     slug

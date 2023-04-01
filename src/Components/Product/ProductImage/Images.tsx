@@ -35,7 +35,7 @@ const Images = ({ setCurrent, current }: Props) => {
                     product.productImages.map((img, i) => (
                         <Grid item {...{ md: 2.5, smd: 2, lsm: 2, sm: 3, xs: 4, xxs: 6 }} key={i}>
                             <Box className={current === i ? "active" : ""} onClick={() => setCurrent(i)} key={i} sx={styles.Images}>
-                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + img.url} alt={`product${i}`} width={80} height={80} />
+                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + img.url} alt={`product${i}`} width={80} height={80} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + img.url} />
                             </Box>
                         </Grid>
                     ))

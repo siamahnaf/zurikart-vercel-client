@@ -34,7 +34,7 @@ const Description = () => {
             <Collapse sx={{ position: "relative" }} in={expanded} collapsedSize={250}>
                 <Box>
                     <NoSsr>
-                        <Box>
+                        <Box sx={tableStyles}>
                             {parse(product?.description || "")}
                         </Box>
                     </NoSsr>
@@ -54,3 +54,24 @@ const Description = () => {
     );
 };
 export default Description;
+
+const tableStyles = {
+    table: {
+        borderCollapse: "collapse",
+        width: "100%",
+        tableLayout: "auto",
+        tr: {
+            td: {
+                border: "1px solid rgba(0, 0, 0, 0.1) !important",
+                tableLayout: "auto",
+                m: 0,
+                display: "table-cell",
+                p: "6px 8px"
+            },
+            th: {
+                bgcolor: "rgba(0, 0, 0, 0.1)",
+                p: "6px 8px"
+            }
+        }
+    }
+}

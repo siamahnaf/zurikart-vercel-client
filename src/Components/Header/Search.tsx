@@ -94,7 +94,13 @@ const Search = () => {
                                     <a>
                                         <Grid container spacing={2}>
                                             <Grid item {...{ lgs: 1.2, smd: 2.5 }}>
-                                                <Image src={product?.productImages[0]?.url ? process.env.NEXT_PUBLIC_IMAGE_PATH + product?.productImages[0]?.url : Default} alt={product.name} width={60} height={60} />
+                                                {product?.productImages[0]?.url ?
+                                                    (
+                                                        <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product?.productImages[0]?.url} alt={product.name} width={60} height={60} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + product?.productImages[0]?.url} />
+                                                    ) : (
+                                                        <Image src={Default} alt={product.name} width={60} height={60} placeholder="blur" />
+                                                    )
+                                                }
                                             </Grid>
                                             <Grid item {...{ lgs: 10.8, smd: 9.5 }}>
                                                 <Typography variant="body1" component="p" sx={styles.title}>
