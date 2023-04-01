@@ -87,7 +87,7 @@ const ProductContent = () => {
             </Box>
             <Box sx={{ mt: "25px" }}>
                 {product?.tag?.map((item) => (
-                    <Typography component="span" sx={{ border: "1px solid rgba(0, 0, 0, 0.2)", fontSize: "12px", py: "4px", px: "15px", borderRadius: "25px" }}>
+                    <Typography component="span" sx={{ border: "1px solid rgba(0, 0, 0, 0.2)", fontSize: "12px", py: "4px", px: "15px", borderRadius: "25px" }} key={i}>
                         {item.name}
                     </Typography>
                 ))}
