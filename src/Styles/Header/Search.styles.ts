@@ -19,7 +19,11 @@ const styles = {
         fontSize: "15px",
         color: "white",
         px: "26px",
-        borderRadius: "0 3px 3px 0"
+        borderRadius: "0 3px 3px 0",
+        display: {
+            sm: "block",
+            xxs: "none"
+        }
     },
     SearchIcon: {
         svg: {

@@ -22,10 +22,10 @@ const Gallery = () => {
         <div>
             <Grid container spacing={3}>
                 {gallery.map((item, i) => (
-                    <Grid item {...{ md: 6 }} key={i}>
+                    <Grid item {...{ sm: 6, xxs: 12 }} key={i}>
                         <Link href={item.url}>
                             <a>
-                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={400} height={420} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
+                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={600} height={620} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
                             </a>
                         </Link>
                     </Grid>

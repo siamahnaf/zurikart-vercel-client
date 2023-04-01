@@ -35,13 +35,13 @@ const Product: NextPage = () => {
                     <>
                         <TopInfo />
                         <Stack direction="row" sx={{ flexWrap: "wrap" }}>
-                            <Box sx={{ flexBasis: "80%" }}>
+                            <Box sx={{ flexBasis: { md: "78%", xxs: "100%" } }}>
                                 <Grid container spacing={{ xxxl: 5, xxl: 4, xl: 3, smd: 2, xxs: 4 }}>
                                     <Grid item {...{ md: 6, xxs: 12 }} sx={{ position: { md: "sticky", xxs: "unset" }, height: "max-content", top: "70px" }}><ProductImage /></Grid>
                                     <Grid item {...{ md: 6, xxs: 12 }}><ProductContent /></Grid>
                                 </Grid>
                             </Box>
-                            <Box sx={{ flexBasis: "20%" }}>
+                            <Box sx={{ flexBasis: { md: "20%", xxs: "100%" }, ml: "10px" }}>
                                 <ProductSide />
                             </Box>
                         </Stack>

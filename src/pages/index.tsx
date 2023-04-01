@@ -33,8 +33,8 @@ const Home: NextPage = () => {
     <Layout title={sites?.siteTitle}>
       <Container maxWidth="xxxl" disableGutters>
         <Grid container spacing={2}>
-          <Grid item {...{ md: 8 }}><Carousel /></Grid>
-          <Grid item {...{ md: 4 }}><Gallery /></Grid>
+          <Grid item {...{ lg: 8, xxs: 12 }}><Carousel /></Grid>
+          <Grid item {...{ lg: 4, xxs: 12 }}><Gallery /></Grid>
         </Grid>
         <Advertise />
         <Sections />

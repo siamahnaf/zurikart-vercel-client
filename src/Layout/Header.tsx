@@ -16,13 +16,13 @@ const Header = () => {
             <Box component="header" sx={styles.StickyHeader}>
                 <Container maxWidth="xxxl" disableGutters>
                     <Grid container spacing={3} alignItems="center">
-                        <Grid item {...{ lg: 2, md: 3, smd: 3.2, msm: 4, sm: 5, xs: 6, xxs: 7 }}>
+                        <Grid item {...{ lg: 2, xxs: 12 }}>
                             <Logo />
                         </Grid>
-                        <Grid item {...{ lg: 6, md: 6, smd: 5.8, }} sx={{ display: { smd: "block", xxs: "none" } }}>
+                        <Grid item {...{ lg: 6, xxs: 12 }}>
                             <Search />
                         </Grid>
-                        <Grid item {...{ lg: 4, md: 3, smd: 3, msm: 8, sm: 7, xs: 6, xxs: 5 }}>
+                        <Grid item {...{ lg: 4, xxs: 12 }}>
                             <Icon />
                         </Grid>
                     </Grid>

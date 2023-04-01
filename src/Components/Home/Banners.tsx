@@ -21,7 +21,7 @@ const Banners = ({ dynamicBanner }: Props) => {
                     <Grid container spacing={3}>
                         {dynamics?.banners?.length > 0 &&
                             dynamics?.banners?.map((item, i) => (
-                                <Grid item {...{ md: Number(dynamics.bannerType) || 3 }} key={i}>
+                                <Grid item {...{ md: Number(dynamics.bannerType) || 3, xxs: 12 }} key={i}>
                                     <Box>
                                         <Link href={item.link}>
                                             <a>

@@ -5,7 +5,10 @@ const styles = {
         display: "flex",
         flexDirection: "row",
         textAlign: "right",
-        justifyContent: "right",
+        justifyContent: {
+            lg: "right",
+            xxs: "left"
+        },
         li: {
             width: "unset",
             ml: {
