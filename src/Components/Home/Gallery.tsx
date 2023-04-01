@@ -16,7 +16,6 @@ interface BannersData {
 const Gallery = () => {
     //Selector
     const { galleryData } = useAppSelector(state => state.getGallery);
-    console.log(galleryData);
     //State
     const [gallery, getGallery] = useState<BannersData[]>(galleryData);
     return (
