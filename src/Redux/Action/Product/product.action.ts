@@ -52,6 +52,7 @@ export const getProducts = (data: GetData) => async (dispatch: Dispatch) => {
                         totalPrice
                         discount
                         discountUnit
+                        view
                     }
                     pageInfos {
                         hasNextPage
@@ -124,6 +125,7 @@ export const getProductBySearch = (search: string) => async (dispatch: Dispatch)
                         totalPrice
                         discount
                         discountUnit
+                        view
                     }
                 }
             }`,
@@ -184,6 +186,9 @@ export const getSingleProduct = (slug: string) => async (dispatch: Dispatch) => 
                   price
                   quantity
                   description
+                  shortSummery
+                  badge
+                  notice
                   attributes {
                     variant
                     price
@@ -202,6 +207,9 @@ export const getSingleProduct = (slug: string) => async (dispatch: Dispatch) => 
                     description
                     metaTags
                     image
+                  }
+                  tag {
+                    name
                   }
                   totalPrice
                   disclaimer

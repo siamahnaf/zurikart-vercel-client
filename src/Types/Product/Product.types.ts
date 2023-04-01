@@ -11,6 +11,9 @@ interface Specification {
     title: string;
     value: string;
 }
+interface Tags {
+    name: string;
+}
 export interface SingleProduct {
     id: string;
     name: string;
@@ -41,6 +44,10 @@ export interface SingleProduct {
     totalPrice: number;
     disclaimer: string;
     productUrl: string;
+    shortSummery: string;
+    badge: string;
+    notice: string;
+    tag: Tags[];
 }
 
 export interface ReviewsData {

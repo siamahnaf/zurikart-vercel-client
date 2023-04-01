@@ -13,6 +13,7 @@ import {
     getSectionsReducer,
     getBrandsReducer,
     getGalleryReducer,
+    getArticlesReducer
 } from "Redux/Reducer/Home/home.reducer";
 //Products
 import {
@@ -44,5 +45,6 @@ export const combinedReducer = combineReducers({
     getReviews: getReviewsReducer,
     getSelling: getSellingReducer,
     //Server
-    serverError: serverErrorReducer
+    serverError: serverErrorReducer,
+    getArticles: getArticlesReducer
 });

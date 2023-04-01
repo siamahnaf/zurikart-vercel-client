@@ -41,7 +41,7 @@ const styles = {
     PrevButton: {
         position: "absolute",
         left: -10,
-        background: "linear-gradient(to left, transparent, #f6f6f6,  #f6f6f6)",
+        background: "linear-gradient(to left, transparent, #fff,  #fff)",
         top: 0,
         height: "100%",
         pr: "30px",
@@ -57,7 +57,7 @@ const styles = {
     NextButton: {
         position: "absolute",
         right: -10,
-        background: "linear-gradient(to right, transparent, #f6f6f6,  #f6f6f6)",
+        background: "linear-gradient(to right, transparent, #fff,  #fff)",
         top: 0,
         height: "100%",
         pl: "30px",

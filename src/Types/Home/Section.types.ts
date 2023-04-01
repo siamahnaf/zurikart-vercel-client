@@ -1,3 +1,13 @@
+export interface Banners {
+    link: string;
+    url: string;
+    text: string;
+}
+export interface DynamicBanners {
+    banners: Banners[];
+    bannerType: string;
+    title: string;
+}
 interface ProductsImages {
     url: string;
 }
@@ -26,4 +36,5 @@ export interface Sections {
     category2Product: Products[];
     banner: string;
     bannerUrl: string;
+    dynamicBanner: DynamicBanners[];
 }

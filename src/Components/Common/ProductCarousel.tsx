@@ -134,7 +134,7 @@ const ProductCarousel = ({ products }: Props) => {
                                         </Box>
                                         <Box sx={{ flex: 1, textAlign: "right" }}>
                                             <Box sx={{ bgcolor: "primary.main", borderRadius: "3px", p: "2px 10px", display: "flex", width: "max-content", ml: "auto", color: "white", gap: "5px", alignItems: "center" }}>
-                                                <span>{product?.view || 0}</span>
+                                                <span>{"4." + (product?.view ? String(product.view)[0] : 0)}</span>
                                                 <Icon icon="ic:outline-remove-red-eye" />
                                             </Box>
                                         </Box>

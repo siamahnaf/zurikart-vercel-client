@@ -14,7 +14,9 @@ import {
     GET_SECTIONS_SUCCESS,
     //Get Brands
     GET_BRANDS_FAILED,
-    GET_BRANDS_SUCCESS
+    GET_BRANDS_SUCCESS,
+    GET_ARTICLES_SUCCESS,
+    GET_ARTICLES_FAILED
 } from "Redux/Constant/Home/home.constant";
 import { SERVER_ERROR } from "Redux/Constant/server.constant";
 
@@ -102,48 +104,57 @@ export const getSections = () => async (dispatch: Dispatch) => {
         query:
             `query getSection {
                 getSections {
+                  name
+                  description
+                  category1 {
+                    slug
                     name
-                    description
-                    category1 {
-                        slug
-                        name
+                  }
+                  category2 {
+                    slug
+                    name
+                  }
+                  category1Product {
+                    slug
+                    name
+                    price
+                    productImages {
+                      url
                     }
-                    category2 {
-                        slug
-                        name
+                    totalPrice
+                    discount
+                    discountUnit
+                    view
+                    category {
+                      slug
                     }
-                    category1Product {
-                        slug
-                        name
-                        price
-                        productImages {
-                            url
-                        }
-                        totalPrice
-                        discount
-                        discountUnit
-                        view
-                        category {
-                            slug
-                        }
+                  }
+                  category2Product {
+                    slug
+                    name
+                    price
+                    productImages {
+                      url
                     }
-                    category2Product {
-                        slug
-                        name
-                        price
-                        productImages {
-                            url
-                        }
-                        totalPrice
-                        discount
-                        discountUnit
-                        view
-                        category {
-                            slug
-                        }
+                    totalPrice
+                    discount
+                    discountUnit
+                    view
+                    category {
+                      slug
                     }
-                    banner
-                    bannerUrl
+                  }
+                  banner
+                  bannerUrl
+                  dynamicBanner {
+                    title
+                    bannerType
+                    banners {
+                      link
+                      url
+                      text
+                    }
+                  }
                 }
             }`
     })
@@ -245,6 +256,42 @@ export const getGallery = () => async (dispatch: Dispatch) => {
                     type: GET_GALLERY_SUCCESS,
                     payload: {
                         getGallery: res.data.data.getGallery
+                    }
+                })
+            }
+        })
+        .catch(err => {
+            dispatch({
+                type: SERVER_ERROR,
+                payload: {
+                    message: "Something went wrong!"
+                }
+            })
+        })
+}
+
+export const getArticles = () => async (dispatch: Dispatch) => {
+    await axios.post(process.env.NEXT_PUBLIC_API_URL as string, {
+        query:
+            `query getArticles {
+                getArticles {
+                  description
+                }
+            }`
+    })
+        .then(res => {
+            if (res.data.errors) {
+                dispatch({
+                    type: GET_ARTICLES_FAILED,
+                    payload: {
+                        message: res.data.errors[0].message
+                    }
+                })
+            } else {
+                dispatch({
+                    type: GET_ARTICLES_SUCCESS,
+                    payload: {
+                        getArticles: res.data.data.getArticles
                     }
                 })
             }

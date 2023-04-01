@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Box, Typography, Stack, Grid } from "@mui/material";
+import { Box, Typography, Stack, NoSsr } from "@mui/material";
 import Link from "next/link";
-import Image from "next/image";
+import { Icon } from "@iconify/react";
+import parse from "html-react-parser";
 
 //Styles
 import styles from "Styles/Product/ProductContent.styles";
@@ -30,12 +31,13 @@ const ProductContent = () => {
                 </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" sx={styles.ReviewsContainer}>
-                <Typography variant="body2" component="p" sx={styles.Reviews}>
-                    {product.view && (product.view < 10 ? `0${product.view}` : product.view) || 0} views
-                </Typography>
-                <Typography variant="body2" component="p" sx={{ fontSize: "14px" }}>
-                    SKU: {product?.id}
-                </Typography>
+                <Box sx={{ bgcolor: "primary.main", borderRadius: "3px", p: "2px 10px", display: "flex", width: "max-content", color: "white", gap: "5px", alignItems: "center" }}>
+                    <span>{"4." + (product?.view ? String(product.view)[0] : 0)}</span>
+                    <Icon icon="ic:round-star-rate" />
+                </Box>
+                <Box sx={{ ml: "10px", span: { opacity: 0.6, fontSize: "14px" } }}>
+                    ({product?.view || 0}) <span>/ Write a Review</span>
+                </Box>
             </Stack>
             <Typography variant="body2" component="p" sx={styles.AvailabilityAndBrand}>
                 Availability : {" "}
@@ -51,20 +53,14 @@ const ProductContent = () => {
                     </Typography>
                 </Typography>
             </Box>
-            {product?.totalPrice < product?.price &&
-                <Typography variant="h5" component="h5" sx={styles.OriginalPrice}>
-                    ৳{product?.price}
-                    <Typography variant="body1" component="span">
-                        /1
-                    </Typography>
+            <Typography variant="h5" component="h5" sx={styles.Price}>
+                KSh {product?.totalPrice}
+            </Typography>
+            {product?.notice &&
+                <Typography variant="body1" component="p" sx={styles.Notice}>
+                    NB: {product?.notice}
                 </Typography>
             }
-            <Typography variant="h4" component="h4" sx={styles.Price}>
-                ৳{product?.totalPrice}
-                <Typography variant="body1" component="span">
-                    /1
-                </Typography>
-            </Typography>
             {product?.attributes?.length > 0 &&
                 <Box sx={styles.Size}>
                     <Typography variant="body1" component="p" className="title">
@@ -79,46 +75,22 @@ const ProductContent = () => {
                     </Box>
                 </Box>
             }
-            <Box sx={{ my: "20px" }}>
-                <Grid container spacing={2}>
-                    <Grid item {...{ md: 12 }}>
-                        <Stack direction="row" gap={3} sx={{ border: "1px solid rgba(0, 0, 0, 0.2)", py: "10px", px: "10px", borderRadius: "10px" }}>
-                            <Box sx={{ flexBasis: "10%" }}>
-                                <Image src={DoorImage} alt="Door Image" />
-                            </Box>
-                            <Box sx={{ flex: 1 }}>
-                                <Typography variant="h5" component="h5" sx={{ fontSize: "17px", fontWeight: 600 }}>Door Delivery</Typography>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "14px" }}>
-                                    Shipping KSh{product.doorDeliveryFee}
-                                </Typography>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "14px" }}>
-                                    Delivery by 24 hours delivery when you order within next 20hrs 8mins
-                                </Typography>
-                            </Box>
-                        </Stack>
-                    </Grid>
-                    <Grid item {...{ md: 12 }}>
-                        <Stack direction="row" gap={3} sx={{ border: "1px solid rgba(0, 0, 0, 0.2)", py: "10px", px: "10px", borderRadius: "10px" }}>
-                            <Box sx={{ flexBasis: "10%" }}>
-                                <Image src={PickupImage} alt="Door Image" />
-                            </Box>
-                            <Box sx={{ flex: 1 }}>
-                                <Typography variant="h5" component="h5" sx={{ fontSize: "17px", fontWeight: 600 }}>Pickup Station</Typography>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "14px" }}>
-                                    Shipping KSh{product.pickupFee}
-                                </Typography>
-                                <Typography variant="body1" component="p" sx={{ fontSize: "14px" }}>
-                                    Delivery by 24 hours delivery when you order within next 20hrs 8mins
-                                </Typography>
-                            </Box>
-                        </Stack>
-                    </Grid>
-                </Grid>
+            <Box>
+                <NoSsr>
+                    {parse(product?.shortSummery || "")}
+                </NoSsr>
             </Box>
             <Box sx={styles.BuyButton}>
                 <Link href={product.productUrl || "https://zuricart.co.ke/"}>
                     <a>Buy Now</a>
                 </Link>
+            </Box>
+            <Box sx={{ mt: "25px" }}>
+                {product?.tag?.map((item) => (
+                    <Typography component="span" sx={{ border: "1px solid rgba(0, 0, 0, 0.2)", fontSize: "12px", py: "4px", px: "15px", borderRadius: "25px" }}>
+                        {item.name}
+                    </Typography>
+                ))}
             </Box>
         </Box >
     );

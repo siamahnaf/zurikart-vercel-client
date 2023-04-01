@@ -13,7 +13,9 @@ import {
     GET_GALLERY_FAILED,
     //Get brands
     GET_BRANDS_SUCCESS,
-    GET_BRANDS_FAILED
+    GET_BRANDS_FAILED,
+    GET_ARTICLES_SUCCESS,
+    GET_ARTICLES_FAILED
 } from "Redux/Constant/Home/home.constant";
 
 
@@ -81,6 +83,16 @@ export const getSliderReducer = (state = getSlidersInitial, action: AnyAction) =
 }
 
 //Get sections initial state and type
+export interface Bannessrs {
+    link: string;
+    url: string;
+    text: string;
+}
+export interface DynamicBanners {
+    dynamicBanner: Bannessrs[];
+    bannerType: string;
+    title: string;
+}
 interface ProductsImages {
     url: string;
 }
@@ -110,6 +122,7 @@ interface Sections {
     category2Product: Products[];
     banner: string;
     bannerUrl: string;
+    dynamicBanner: DynamicBanners;
 }
 interface GetSectionsInitial {
     message?: string;
@@ -195,6 +208,35 @@ export const getGalleryReducer = (state = getGalleryInitial, action: AnyAction) 
                 galleryData: action.payload.getGallery
             }
         case GET_GALLERY_FAILED:
+            return {
+                message: action.payload.message,
+                success: false
+            }
+        default:
+            return state
+    }
+}
+
+
+interface ArticlesDesc {
+    description: string;
+}
+interface GetArticlesInitial {
+    success?: boolean | null;
+    message?: string;
+    articles?: ArticlesDesc
+}
+//--//
+const getArticlesInitial: GetArticlesInitial = {}
+//--//
+export const getArticlesReducer = (state = getArticlesInitial, action: AnyAction) => {
+    switch (action.type) {
+        case GET_ARTICLES_SUCCESS:
+            return {
+                success: true,
+                articles: action.payload.getArticles
+            }
+        case GET_ARTICLES_FAILED:
             return {
                 message: action.payload.message,
                 success: false

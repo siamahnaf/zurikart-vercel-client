@@ -13,20 +13,21 @@ import { ProductsData } from "Types/Category/category.type";
 //Redux
 import { useAppSelector } from "Redux/Hook";
 
-const Selling = () => {
+const Latest = () => {
     //Selector
-    const { sellingProducts } = useAppSelector(state => state.getSelling);
+    const { productsData } = useAppSelector(state => state.getProduct);
     //State
-    const [products, setProducts] = useState<ProductsData[]>(sellingProducts);
+    const [products, setProducts] = useState<ProductsData[]>(productsData);
     //Effect
     return (
         <Box>
             <SectionHeader
-                title="Customers who views this also viewed"
+                title="More Selling Product"
                 description="Check & Get Your Desired Product"
             />
             <ProductCarousel products={products} />
         </Box>
     );
 };
-export default Selling;
+
+export default Latest;

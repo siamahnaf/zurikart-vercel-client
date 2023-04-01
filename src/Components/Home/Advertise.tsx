@@ -13,14 +13,14 @@ import { useAppSelector } from "Redux/Hook";
 interface SlidersData {
     name: string;
     url: string;
-    slider: string;
+    banner: string;
 }
 
 const Advertise = () => {
     //Selector
-    const { slidersData } = useAppSelector(state => state.getSliders);
+    const { bannersData } = useAppSelector(state => state.getBanners);
     //State
-    const [sliders, setSliders] = useState<SlidersData[]>(slidersData);
+    const [sliders, setSliders] = useState<SlidersData[]>(bannersData);
     return (
         <Box sx={{ position: "relative", mt: "1.5em" }}>
             <Box className="embla" sx={styles.Embla}>
@@ -33,7 +33,7 @@ const Advertise = () => {
                                         <a rel="preload">
                                             <Box className="ratioImage">
                                                 <Image
-                                                    src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
+                                                    src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
                                                     alt={carousel.name}
                                                     layout={'fill'}
                                                 />

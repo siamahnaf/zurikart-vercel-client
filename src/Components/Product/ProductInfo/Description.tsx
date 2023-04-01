@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Box, Typography, NoSsr } from "@mui/material";
+import { Box, Typography, NoSsr, Collapse, ButtonBase } from "@mui/material";
 import parse from "html-react-parser";
 
 //Styles
@@ -24,19 +24,32 @@ const Description = () => {
             setProduct(products)
         }
     }, [products])
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleExpanded = () => {
+        setExpanded((prevExpanded) => !prevExpanded);
+    };
     return (
         <Box>
-            <NoSsr>
-                <Typography variant="body1" component="p" sx={{ fontSize: "15px" }}>
-                    {parse(product?.description || "")}
-                </Typography>
-            </NoSsr>
-            <Typography variant="body1" component="p" sx={styles.Desclaimer}>
-                Disclaimer: {" "}
-                <Typography variant="body1" component="span">
-                    {product?.disclaimer}
-                </Typography>
-            </Typography>
+            <Collapse sx={{ position: "relative" }} in={expanded} collapsedSize={250}>
+                <Box>
+                    <NoSsr>
+                        <Box>
+                            {parse(product?.description || "")}
+                        </Box>
+                    </NoSsr>
+                    <Typography variant="body1" component="p" sx={styles.Desclaimer}>
+                        Disclaimer: {" "}
+                        <Typography variant="body1" component="span">
+                            {product?.disclaimer}
+                        </Typography>
+                    </Typography>
+                    <Box sx={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "15px", background: "linear-gradient(to top, #fff,#fff, transparent)" }} />
+                </Box>
+            </Collapse>
+            <ButtonBase onClick={toggleExpanded} sx={{ color: "primary.main", fontSize: "14px" }}>
+                {expanded ? 'Show Less' : 'Show More'}
+            </ButtonBase>
         </Box>
     );
 };

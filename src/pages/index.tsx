@@ -10,6 +10,7 @@ import Carousel from "Components/Home/Carousel";
 import Gallery from "Components/Home/Gallery";
 import Advertise from "Components/Home/Advertise";
 import Sections from "Components/Home/Sections";
+import Articles from "Components/Home/Articles";
 
 //Types import
 import { SitesSettings } from "Types/Common/Sites.types";
@@ -18,7 +19,7 @@ import { SitesSettings } from "Types/Common/Sites.types";
 import { wrapper } from "Redux/Store";
 import { useAppSelector } from "Redux/Hook";
 import { getCategory, getSitesSettings } from "Redux/Action/Common/common.action";
-import { getBanners, getSliders, getSections, getGallery } from "Redux/Action/Home/home.action";
+import { getBanners, getSliders, getSections, getGallery, getArticles } from "Redux/Action/Home/home.action";
 
 const Home: NextPage = () => {
   //Selector
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
         </Grid>
         <Advertise />
         <Sections />
+        <Articles />
       </Container>
     </Layout>
   );
@@ -53,6 +55,7 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
       await store.dispatch(getSections());
       await store.dispatch(getSitesSettings());
       await store.dispatch(getGallery())
+      await store.dispatch(getArticles());
       return { props: {} };
     }
 )

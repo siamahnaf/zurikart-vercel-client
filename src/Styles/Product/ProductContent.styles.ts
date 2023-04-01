@@ -48,14 +48,13 @@ const styles = {
     },
     Price: {
         mb: "10px",
-        fontWeight: 600,
+        fontWeight: 600
+    },
+    Notice: {
+        fontWeight: 700,
+        fontSize: "15px",
         color: "primary.main",
-        span: {
-            color: "text.primary",
-            ml: "10px",
-            opacity: 0.6,
-            fontSize: "14px"
-        }
+        mb: "10px"
     },
     Size: {
         mb: "20px",

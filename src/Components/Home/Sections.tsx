@@ -8,6 +8,7 @@ import ProductCarousel from "Components/Common/ProductCarousel";
 
 //Types import
 import { Sections } from "Types/Home/Section.types";
+import Banners from "./Banners";
 
 //Redux
 import { useAppSelector } from "Redux/Hook";
@@ -59,9 +60,16 @@ const Sections = () => {
                         <ProductCarousel products={item.category1Product} />
                     </Box>
                     <Box sx={{ mb: "2em" }}>
-                        <Link href={`/category/${item?.bannerUrl}`}>
-                            <a><Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} /></a>
-                        </Link>
+                        {item?.dynamicBanner.length > 0 &&
+                            <Banners
+                                dynamicBanner={item?.dynamicBanner}
+                            />
+                        }
+                        {item?.banner &&
+                            <Link href={item?.bannerUrl}>
+                                <a><Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} /></a>
+                            </Link>
+                        }
                     </Box>
                 </Box>
             ))}

@@ -149,6 +149,9 @@ interface SingleProduct {
         image: string;
     }
     view: number;
+    shortSummery: string;
+    badge: string;
+    notice: string;
     doorDeliveryFee: number;
     pickupFee: number;
     totalPrice: string;

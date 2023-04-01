@@ -15,14 +15,14 @@ import { useAppSelector } from "Redux/Hook";
 interface BannersData {
     name: string;
     url: string;
-    banner: string;
+    slider: string;
 }
 
 const Carousel = () => {
     //Selector
-    const { bannersData } = useAppSelector(state => state.getBanners);
+    const { slidersData } = useAppSelector(state => state.getSliders);
     //State
-    const [banners, setBanners] = useState<BannersData[]>(bannersData);
+    const [banners, setBanners] = useState<BannersData[]>(slidersData);
     //Handler
     const autoplay = useRef(
         Autoplay(
@@ -59,7 +59,7 @@ const Carousel = () => {
                                         <a aria-label="carousel" rel="preload">
                                             <Box className="ratioImage">
                                                 <Image
-                                                    src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
+                                                    src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
                                                     alt={carousel.name}
                                                     layout={'fill'}
                                                 />

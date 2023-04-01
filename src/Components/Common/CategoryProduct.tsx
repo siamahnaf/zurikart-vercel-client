@@ -31,7 +31,10 @@ const CategoryProduct = ({ products }: Props) => {
                             <Box sx={styles.Card}>
                                 <Link href={`/product/${product.slug}`}>
                                     <a aria-label="carousel">
-                                        <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} alt={product.name} height={500} width={500} />
+                                        {product.productImages.length > 0 ?
+                                            (<Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + product.productImages[0]?.url} alt={product.name} height={500} width={500} />) : (
+                                                <Image src={Default} alt={product.name} height={500} width={500} />
+                                            )}
                                         <Typography variant="body1" component="p">
                                             {product.name}
                                         </Typography>
@@ -46,9 +49,12 @@ const CategoryProduct = ({ products }: Props) => {
                                             </Box>
                                             <Box sx={{ flex: 1, textAlign: "right" }}>
                                                 <Box sx={{ bgcolor: "primary.main", borderRadius: "3px", p: "2px 10px", display: "flex", width: "max-content", ml: "auto", color: "white", gap: "5px", alignItems: "center" }}>
-                                                    <span>{product.view || 0}</span>
-                                                    <Icon icon="ic:outline-remove-red-eye" />
+                                                    <span>{"4." + (product?.view ? String(product.view)[0] : 0)}</span>
+                                                    <Icon icon="ic:round-star-rate" />
                                                 </Box>
+                                            </Box>
+                                            <Box sx={{ ml: "5px" }}>
+                                                ({product?.view || 0})
                                             </Box>
                                         </Stack>
                                     </a>
