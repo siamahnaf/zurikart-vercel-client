@@ -57,7 +57,10 @@ const Carousel = () => {
                                 <Box className="embla__slide" key={i} sx={styles.EmblaSlide}>
                                     <Link href={carousel.url}>
                                         <a aria-label="carousel" rel="preload">
-                                            <Box className="ratioImage">
+                                            <img src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
+                                                alt={carousel.name} />
+                                        </a>
+                                        {/* <Box className="ratioImage">
                                                 <Image
                                                     src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
                                                     alt={carousel.name}
@@ -65,8 +68,7 @@ const Carousel = () => {
                                                     placeholder="blur"
                                                     blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.slider}
                                                 />
-                                            </Box>
-                                        </a>
+                                            </Box> */}
                                     </Link>
                                 </Box>
                             ))

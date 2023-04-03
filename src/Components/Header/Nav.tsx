@@ -45,7 +45,7 @@ const Nav = () => {
         embla.reInit()
     }, [embla])
     return (
-        <Box sx={{ position: "relative", py: "10px" }} onMouseLeave={() => setHover(null)}>
+        <Box sx={{ position: "relative", py: "10px", display: { md: "block", xxs: "none" } }} onMouseLeave={() => setHover(null)}>
             <Box className="embla" sx={styles.Embla}>
                 {categories.length > 0 &&
                     <Box className="embla__viewport" ref={viewportRef}>

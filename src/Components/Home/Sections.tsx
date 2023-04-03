@@ -25,13 +25,10 @@ const Sections = () => {
                 <Box key={i}>
                     {item.category1Product.length > 0 &&
                         <Box>
-                            <Typography sx={{ bgcolor: item?.color || "white", py: "3px", px: "10px", mb: "10px", fontWeight: 700, fontSize: "18px" }}>
-                                {item.name}
-                            </Typography>
                             <Stack direction="row">
                                 <Box sx={{ flex: 1 }}>
                                     <Typography variant="body1" component="p" sx={{ fontSize: "16px", fontWeight: 700 }}>
-                                        {item?.category1?.name}
+                                        {item?.name}
                                     </Typography>
                                 </Box>
                                 <Box sx={{ a: { textDecoration: "none", textTransform: "uppercase", color: "black", display: "flex", alignItems: "center", fontSize: "18px", svg: { fontSize: "28px" } } }}>
@@ -74,7 +71,10 @@ const Sections = () => {
                         }
                         {item?.banner &&
                             <Link href={item?.bannerUrl}>
-                                <a><Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} /></a>
+                                <a>
+                                    {/* <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width={2560} height={400} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} /> */}
+                                    <img src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.banner} alt="banner" width="100%" height="100%" />
+                                </a>
                             </Link>
                         }
                     </Box>

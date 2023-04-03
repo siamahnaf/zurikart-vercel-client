@@ -13,6 +13,10 @@ const styles = {
             xl: "3em",
             lg: "2.5em",
             xxs: "1.5em"
+        },
+        mb: {
+            lgs: "0",
+            xxs: "70px"
         }
     }
 }

@@ -30,7 +30,7 @@ const Description = () => {
         setExpanded((prevExpanded) => !prevExpanded);
     };
     return (
-        <Box>
+        <Box sx={{ bgcolor: "#f0f2f5" }}>
             <Collapse sx={{ position: "relative" }} in={expanded} collapsedSize={250}>
                 <Box>
                     <NoSsr>
@@ -61,17 +61,16 @@ const tableStyles = {
         width: "100%",
         tableLayout: "auto",
         tr: {
-            td: {
+            "td, th": {
                 border: "1px solid rgba(0, 0, 0, 0.1) !important",
                 tableLayout: "auto",
                 m: 0,
                 display: "table-cell",
-                p: "6px 8px"
+                p: "6px 8px",
+                "&:last-child": {
+                    bgcolor: "white"
+                }
             },
-            th: {
-                bgcolor: "rgba(0, 0, 0, 0.1)",
-                p: "6px 8px"
-            }
         }
     }
 }

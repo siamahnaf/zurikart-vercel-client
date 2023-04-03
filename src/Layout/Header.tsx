@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState, useEffect } from "react";
+import { Fragment } from "react";
 import { Container, Box, Grid } from "@mui/material";
 
 //Components
@@ -6,6 +6,7 @@ import Logo from "Components/Header/Logo";
 import Search from "Components/Header/Search";
 import Icon from "Components/Header/Icon";
 import Nav from "Components/Header/Nav";
+import BottomNav from "Components/Header/BottomNav";
 
 //Styles
 import styles from "Styles/Header/Header.styles";
@@ -31,6 +32,7 @@ const Header = () => {
             <Container maxWidth="xxxl" disableGutters sx={styles.NavBar}>
                 <Nav />
             </Container>
+            <BottomNav />
         </Fragment>
     );
 };

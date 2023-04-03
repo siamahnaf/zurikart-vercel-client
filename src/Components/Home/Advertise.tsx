@@ -31,7 +31,9 @@ const Advertise = () => {
                                 <Box className="embla__slide" key={i} sx={styles.EmblaSlide}>
                                     <Link href={carousel.url}>
                                         <a rel="preload">
-                                            <Box className="ratioImage">
+                                            <img src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
+                                                alt={carousel.name} />
+                                            {/* <Box className="ratioImage">
                                                 <Image
                                                     src={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
                                                     alt={carousel.name}
@@ -39,7 +41,7 @@ const Advertise = () => {
                                                     placeholder="blur"
                                                     blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + carousel.banner}
                                                 />
-                                            </Box>
+                                            </Box> */}
                                         </a>
                                     </Link>
                                 </Box>
