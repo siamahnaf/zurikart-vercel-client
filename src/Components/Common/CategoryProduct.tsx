@@ -2,6 +2,7 @@ import { Box, Grid, Typography, Stack } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { formateNumber } from "Utilis/Helpers";
 
 //Images
 import Exce from "Assets/exx.png";
@@ -53,8 +54,8 @@ const CategoryProduct = ({ products }: Props) => {
                                                     <Icon icon="ic:round-star-rate" />
                                                 </Box>
                                             </Box>
-                                            <Box sx={{ ml: "5px" }}>
-                                                ({product?.view || 0})
+                                            <Box sx={{ ml: "5px", display: { msm: "block", xxs: "none" } }}>
+                                                ({formateNumber(product?.view) || 0})
                                             </Box>
                                         </Stack>
                                     </a>

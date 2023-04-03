@@ -5,6 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { formateNumber } from "Utilis/Helpers";
 
 
 //Images
@@ -140,6 +141,9 @@ const ProductCarousel = ({ products }: Props) => {
                                                 <span>{"4." + (product?.view ? String(product.view)[0] : 0)}</span>
                                                 <Icon icon="ic:outline-remove-red-eye" />
                                             </Box>
+                                        </Box>
+                                        <Box sx={{ ml: "5px", display: { msm: "block", xxs: "none" } }}>
+                                            ({formateNumber(product?.view) || 0})
                                         </Box>
                                     </Stack>
                                 </a>

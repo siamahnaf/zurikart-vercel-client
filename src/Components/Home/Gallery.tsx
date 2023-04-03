@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,14 +20,16 @@ const Gallery = () => {
     const [gallery, getGallery] = useState<BannersData[]>(galleryData);
     return (
         <div>
-            <Grid container spacing={3}>
+            <Grid container spacing={1}>
                 {gallery.map((item, i) => (
                     <Grid item {...{ xxs: 6 }} key={i}>
-                        <Link href={item.url}>
-                            <a>
-                                <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={600} height={620} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
-                            </a>
-                        </Link>
+                        <Box sx={{ a: { span: { display: "block !important" } } }}>
+                            <Link href={item.url}>
+                                <a>
+                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={600} height={620} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
+                                </a>
+                            </Link>
+                        </Box>
                     </Grid>
                 ))}
             </Grid>

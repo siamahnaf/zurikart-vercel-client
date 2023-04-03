@@ -30,7 +30,7 @@ const Description = () => {
         setExpanded((prevExpanded) => !prevExpanded);
     };
     return (
-        <Box sx={{ bgcolor: "#f0f2f5" }}>
+        <Box>
             <Collapse sx={{ position: "relative" }} in={expanded} collapsedSize={250}>
                 <Box>
                     <NoSsr>
@@ -67,8 +67,8 @@ const tableStyles = {
                 m: 0,
                 display: "table-cell",
                 p: "6px 8px",
-                "&:last-child": {
-                    bgcolor: "white"
+                "&:first-child": {
+                    bgcolor: "#f0f2f5"
                 }
             },
         }
