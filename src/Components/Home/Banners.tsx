@@ -1,7 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import Image from "next/image";
-import { AspectRatio } from "react-aspect-ratio";
 import "react-aspect-ratio/aspect-ratio.css";
 
 //Interface
@@ -25,9 +23,7 @@ const Banners = ({ dynamicBanner }: Props) => {
                                     <Box>
                                         <Link href={item.link}>
                                             <a>
-                                                <AspectRatio ratio="4/3" style={{ width: "100%" }} >
-                                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} alt="banner" key={i} layout={'fill'} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} />
-                                                </AspectRatio>
+                                                <img src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.url} alt="banner" placeholder="blur" width="100%" height="100%" />
                                             </a>
                                         </Link>
                                     </Box>

@@ -26,7 +26,7 @@ const Gallery = () => {
                         <Box sx={{ a: { span: { display: "block !important" } } }}>
                             <Link href={item.url}>
                                 <a>
-                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={600} height={620} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
+                                    <Image src={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} alt={item.name} width={600} height={600} placeholder="blur" blurDataURL={process.env.NEXT_PUBLIC_IMAGE_PATH + item.gallery} />
                                 </a>
                             </Link>
                         </Box>
