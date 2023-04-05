@@ -16,14 +16,14 @@ const Header = () => {
         <Fragment>
             <Box component="header" sx={styles.StickyHeader}>
                 <Container maxWidth="xxxl" disableGutters>
-                    <Grid container spacing={3} alignItems="center">
-                        <Grid item {...{ lg: 2, xxs: 12 }}>
+                    <Grid container spacing={{ lg: 3, xxs: 1 }} alignItems="center">
+                        <Grid item {...{ lg: 2, xxs: 3 }} sx={{ mt: { lg: 0, xxs: "8px" } }}>
                             <Logo />
                         </Grid>
-                        <Grid item {...{ lg: 6, xxs: 12 }}>
+                        <Grid item {...{ lg: 6, xxs: 9 }}>
                             <Search />
                         </Grid>
-                        <Grid item {...{ lg: 4, xxs: 12 }}>
+                        <Grid item {...{ lg: 4, xxs: 12 }} sx={{ display: { lg: "block", xxs: "none" } }}>
                             <Icon />
                         </Grid>
                     </Grid>
